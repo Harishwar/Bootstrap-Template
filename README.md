@@ -1,2 +1,2 @@
-Bootstrap-Template
-==================
+Bootstrap
+=========
