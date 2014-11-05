@@ -22,18 +22,9 @@
         }, function() {
             $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
         });
-        /* Image Popover */
-        $('[data-toggle="popover"]').on({
-            html: 'true',
-            mouseover: function() {
-                $(this).popover('toggle');
-            },
-            mouseleave: function() {
-                $(this).popover('toggle');
-            },
-            click: function() {
-                $(this).off('mouseleave');
-            }
+        /* Modal */
+        $(".downloadwp").click(function() {
+            $("#myModal").modal('show');
         });
 
     });
@@ -50,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="img/Logo.png" class="logo-small">
                 </a>
             </div>
@@ -63,7 +54,7 @@
                         <ul class="dropdown-menu navbar-inverse" role="menu">
                             <li><a href="#">Mobile</a>
                             </li>
-                            <li><a href="#">Big Data</a>
+                            <li><a href="bigdata.html">Big Data</a>
                             </li>
                             <li><a href="#">IoE/IoT</a>
                             </li>
@@ -72,7 +63,7 @@
                     <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Management</a>
+                            <li><a href="management.html">Management</a>
                             </li>
                             <li><a href="#">Code of Conduct</a>
                             </li>
@@ -100,12 +91,44 @@
             <br>
             <br>&emsp;
             <button class="btn btn-dark" onclick="#">
-                <h4 class="text-center">White Paper</h4>
+                <h4 class="downloadwp text-center">White Paper</h4>
             </button>
         </div>
     </div>
+    <!-- Download White Paper Modal -->
+    <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Download White Paper Modal</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="downloadWpFName" class="col-xs-12 col-md-3">First Name:</label>
+                            <input type="text" class="col-xs-10 col-xs-offset-1 col-md-8" name="downloadWpFName" id="inputDownloadWpFName" class="form-control" value="" required="required" pattern="" title="" placeholder="Firstname">
+                        </div>
+                        <div class="form-group">
+                            <label for="downloadWpLName" class="col-xs-12 col-md-3">Last Name:</label>
+                            <input type="text" class="col-xs-10 col-xs-offset-1 col-md-8" name="downloadWpLName" id="inputDownloadWpLName" class="form-control" value="" required="required" pattern="" title="" placeholder="Lastname">
+                        </div>
+                        <div class="form-group">
+                            <label for="downloadWpEmail" class="col-xs-12 col-md-3">Email:</label>
+                            <input type="email" class="col-xs-10 col-xs-offset-1 col-md-8" name="downloadWpEmail" id="inputDownloadWpEmail" class="form-control" value="" required="required" pattern="" title="" placeholder="user@email.com">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-dark">Download</button>
+                        </div>
 
+                    </form>
+                </div>
 
+            </div>
+        </div>
+    </div>
+    <!-- End  Download White Paper Modal -->
     <!-- Right SideBar -->
     <div id="sidebar-wrapper" class="right">
         <div class="center">

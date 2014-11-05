@@ -33,7 +33,7 @@
 }
 
 /* Mobile */
-@media(max-width:768px) {
+@media(max-width:480px) {
     .tb h1 {
         font-size: 1.0em;
     }

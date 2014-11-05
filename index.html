@@ -18,15 +18,15 @@
     var bigdata = "bigdata.html";
     var index = "index.html";
     var iot = "iot.html";
-    var mgmt = "mgmt.html";
+    var mgmt = "management.html";
     var mgmtpro = "mgmtpro.html";
     var downwp = "downloadwp.html";
     $(document).ready(function() {
         /* Navbar Dropdown Animation */
         $('.dropdown').hover(function() {
-            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
-        }, function() {
-            $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
+              $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            }, function() {
+              $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
         });
         /* Image Popover */
         $('[data-toggle="popover"]').on({
@@ -43,8 +43,7 @@
         });
 
     });
-
-    function goToPage(arg) {
+    function goToPage (arg) {
         location.href = arg;
     }
     </script>
@@ -60,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="img/Logo.png" class="logo-small">
                 </a>
             </div>
@@ -82,7 +81,7 @@
                     <li role="presentation" class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Management</a>
+                            <li><a href="management.html">Management</a>
                             </li>
                             <li><a href="#">Code of Conduct</a>
                             </li>
@@ -108,33 +107,25 @@
                 <div class="item active">
                     <img src="img/mobile.jpg" alt="Mobile" />
                     <div class="carousel-caption">
-                        <a href="#" class="btn btn-lg btn-dark " role="button">Mobile</a>
-                        <br>
-                        <br>
+                        <a href="#" class="btn btn-lg btn-dark " role="button">Mobile</a><br><br>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/bigdata.jpg" alt="Big Data" />
                     <div class="carousel-caption">
-                        <a href="#" class="btn btn-lg btn-dark" role="button">Big Data</a>
-                        <br>
-                        <br>
+                        <a href="#" class="btn btn-lg btn-dark" role="button">Big Data</a><br><br>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/iot.jpg" alt="IoT/IoE" />
                     <div class="carousel-caption">
-                        <a href="#" class="btn btn-lg btn-dark" role="button">IoT/IoE</a>
-                        <br>
-                        <br>
+                        <a href="#" class="btn btn-lg btn-dark" role="button">IoT/IoE</a><br><br>
                     </div>
                 </div>
                 <div class="item">
                     <img src="img/video.jpg" alt="Video" />
                     <div class="carousel-caption">
-                        <a href="#" class="btn btn-lg btn-dark" role="button">Video</a>
-                        <br>
-                        <br>
+                        <a href="#" class="btn btn-lg btn-dark" role="button">Video</a><br><br>
                     </div>
                 </div>
             </div>
@@ -163,7 +154,7 @@
     <div class="container">
         <div class="row">
             <div id="t1" class="col-xs-4 tb">
-                <h1 class="thumbnail_legend">Mobile</h1>
+            <h1 class="thumbnail_legend">Mobile</h1>
                 <p class="thumbnail">
                     <img id="i1" src="img/mobile_thumb.jpg" class="thumbnailImage" alt="Mobile" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>Mobile</h4><hr> With Mobile Services, it’s easy to rapidly build engaging cross-platform and native apps for iOS, Android, Windows or Mac, store app data in the cloud. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
                 </p>
@@ -175,7 +166,7 @@
                 </p>
             </div>
             <div id="t3" class="col-xs-4 tb">
-                <h1 class="thumbnail_legend">IoT/IoE</h1>
+            <h1 class="thumbnail_legend">IoT/IoE</h1>
                 <p class="thumbnail">
                     <img id="i3" src="img/iot_thumb.jpg" alt="IoT/IoE" class="thumbnailImage" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>IoT/IoE</h4><hr> IoT is network of physical objects that contain embedded technology to comminicate and sense or interact with their internal states or the external environment. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
                 </p>

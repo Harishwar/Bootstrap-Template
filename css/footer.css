@@ -11,3 +11,7 @@
 #footer h4 {
     color: #fff;
 }
+
+#footer{
+	position: absolute;
+}
