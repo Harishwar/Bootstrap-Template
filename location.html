@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Location</title>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/location.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        /* Navbar Dropdown Animation */
+        $('.dropdown').hover(function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+        }, function() {
+            $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
+        });
+    });
+    /* Map */
+    function mapInitialize() {
+        geocoder = new google.maps.Geocoder();
+
+        function codeAddress(addr, fn) {
+            geocoder.geocode({
+                'address': addr
+            }, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    fn(results[0].geometry.location);
+                } else {
+                    alert("Geocode was not successful for the following reason: " + status);
+                }
+            });
+
+        }
+        codeAddress("628 Crescent Terrace, Fremont, CA 94536", function(location) {
+            var fremontMapOptions = {
+                zoom: 12,
+                center: location
+            }
+
+            var fremontMap = new google.maps.Map(document.getElementById('map1-canvas'), fremontMapOptions);
+
+            var fremontMarker = new google.maps.Marker({
+                position: location,
+                map: fremontMap,
+                title: 'Centers for Global Software Development & Sarasvathy Learning Centers'
+            });
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 200,
+                content: "Centers for Global Software Development & Sarasvathy Learning Centers"
+            });
+
+            google.maps.event.addListener(fremontMarker, 'click', function() {
+                infowindow.open(fremontMap, fremontMarker);
+            });
+        });
+
+        codeAddress("1-14/50, Minister Road, Secunderabad, Telangana, India", function(location) {
+            var scbdMapOptions = {
+                zoom: 13,
+                center: location
+            }
+
+            var scbdMap = new google.maps.Map(document.getElementById('map2-canvas'), scbdMapOptions);
+
+            var scbdMarker = new google.maps.Marker({
+                position: location,
+                map: scbdMap,
+                title: 'Centers for CTO Office'
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 200,
+                content: "Center for CTO Office"
+            });
+
+            google.maps.event.addListener(scbdMarker, 'click', function() {
+                infowindow.open(scbdMap, scbdMarker);
+            });
+        });
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', mapInitialize);
+    </script>
+    <script type="text/javascript">
+    </script>
+
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/Logo.png" class="logo-small">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse" role="menu">
+                            <li><a href="#">Mobile</a>
+                            </li>
+                            <li><a href="bigdata.html">Big Data</a>
+                            </li>
+                            <li><a href="#">IoE/IoT</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="management.html">Management</a>
+                            </li>
+                            <li><a href="#">Code of Conduct</a>
+                            </li>
+                            <li><a href="#">Business Process</a>
+                            </li>
+                            <li><a href="#">Locations</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Nav Bar End-->
+
+    <!-- Content -->
+    <div class="container">
+        <br>
+        <legend class="text-center">Locations</legend>
+        <div class="col-xs-12 col-md-6">
+            <address>
+                <strong>Centers for Global Software Development & Sarasvathy Learning Centers: Fremont</strong>
+                <br>628 Crescent Terrace,
+                <br>Fremont, CA 94536
+                <br>USA
+                <br>
+            </address>
+            <div id="map1-canvas"></div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <address>
+                <strong>Centers for CTO Office: Secunderabad</strong>
+                <br>1-14/50, Minister ROad,
+                <br>Secunderabad, T.S,
+                <br>India
+                <br>
+                <br>
+            </address>
+            <div id="map2-canvas"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- Footer -->
+    <section id="footer" class="footer-bg">
+        <div class="container">
+            <div class="row">
+                <br>
+                <div class="col-xs-6 col-md-4">
+                    <img src="img/Logo.png" class="logo-med">
+                </div>
+                <div class="col-xs-12 col-md-1"></div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Home</h4>
+                    <hr>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Products</h4>
+                    <hr>
+                    <p>Mobile</p>
+                    <p>Big Data</p>
+                    <p>IoE/IoT</p>
+                </div>
+                <div class=" col-xs-4 col-md-3">
+                    <h4>About Us</h4>
+                    <hr>
+                    <p>Management</p>
+                    <p>Code of Conduct</p>
+                    <p>Business Process</p>
+                    <p>Locations</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+            <p class="text-muted">&copy;&nbsp;2014 My Corp, Inc</p>
+        </div>
+    </section>
+
+    <!-- Footer End -->
+</body>
+
+</html>
