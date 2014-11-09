@@ -1,0 +1,17 @@
+/* Footer */
+.footer-bg{
+    width: 100%;
+    background-color: #222222;
+}
+
+#footer p {
+    color: #fff;
+}
+
+#footer h4 {
+    color: #fff;
+}
+
+#footer{
+	position: absolute;
+}

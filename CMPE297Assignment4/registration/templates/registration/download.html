@@ -1,0 +1,139 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+  
+    <script type="text/javascript" src="{%static 'js/jquery-2.1.1.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/header.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/footer.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/common.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/index.css'%}">
+    <script type="text/javascript">
+    var bigdata = "bigdata.html";
+    var index = "index.html";
+    var iot = "iot.html";
+    var mgmt = "management.html";
+    var mgmtpro = "mgmtpro.html";
+    var downwp = "downloadwp.html";
+    $(document).ready(function() {
+        /* Navbar Dropdown Animation */
+        $('.dropdown').hover(function() {
+              $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            }, function() {
+              $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
+        });
+        /* Image Popover */
+        $('[data-toggle="popover"]').on({
+            html: 'true',
+            mouseover: function() {
+                $(this).popover('toggle');
+            },
+            mouseleave: function() {
+                $(this).popover('toggle');
+            },
+            click: function() {
+                $(this).off('mouseleave');
+            }
+        });
+
+    });
+    function goToPage (arg) {
+        location.href = arg;
+    }
+    </script>
+</head>
+
+<body>
+ <!-- Nav Bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="{%static 'img/Logo.png'%}" class="logo-small">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://localhost:8000/registration/">Home</a>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse" role="menu">
+                            <li><a href="#">Mobile</a>
+                            </li>
+                            <li><a href="http://localhost:8000/registration/bigdata">Big Data</a>
+                            </li>
+                            <li><a href="#">IoE/IoT</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{%static 'management.html'%}">Management</a>
+                            </li>
+                            <li><a href="#">Code of Conduct</a>
+                            </li>
+                            <li><a href="#">Business Process</a>
+                            </li>
+                            <li><a href="{%static 'location.html'%}">Locations</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Nav Bar End-->
+<a href="{%static 'a.pdf'%}">Download File</a>
+
+    <!-- Footer -->
+    <section id="footer" class="footer-bg">
+        <div class="container">
+            <div class="row">
+                <br>
+                <div class="col-xs-6 col-md-4">
+                    <img src="img/Logo.png" class="logo-med">
+                </div>
+                <div class="col-xs-12 col-md-1"></div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Home</h4>
+                    <hr>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Products</h4>
+                    <hr>
+                    <p>Mobile</p>
+                    <p>Big Data</p>
+                    <p>IoE/IoT</p>
+                </div>
+                <div class=" col-xs-4 col-md-3">
+                    <h4>About Us</h4>
+                    <hr>
+                    <p>Management</p>
+                    <p>Code of Conduct</p>
+                    <p>Business Process</p>
+                    <p>Locations</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+            <p class="text-muted">&copy;&nbsp;2014 My Corp, Inc</p>
+        </div>
+    </section>
+    <!-- Footer End -->
+</body>
+</html>
