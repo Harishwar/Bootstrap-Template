@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{%static 'css/common.css'%}">
     <link rel="stylesheet" type="text/css" href="{%static 'css/index.css'%}">
     <script type="text/javascript">
-    var bigdata = "bigdata.html";
+    var bigdata = "bigdata";
     var index = "index.html";
     var iot = "iot.html";
     var mgmt = "management.html";
@@ -60,7 +60,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="http://localhost:8000/registration/">
                     <img src="{%static 'img/Logo.png'%}" class="logo-small">
                 </a>
             </div>
@@ -169,7 +169,7 @@
             <div id="t3" class="col-xs-4 tb">
             <h1 class="thumbnail_legend">IoT/IoE</h1>
                 <p class="thumbnail">
-                    <img id="i3" src="img/iot_thumb.jpg" alt="IoT/IoE" class="thumbnailImage" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>IoT/IoE</h4><hr> IoT is network of physical objects that contain embedded technology to comminicate and sense or interact with their internal states or the external environment. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
+                    <img id="i3" src="{%static 'img/iot_thumb.jpg'%}"  alt="IoT/IoE" class="thumbnailImage" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>IoT/IoE</h4><hr> IoT is network of physical objects that contain embedded technology to comminicate and sense or interact with their internal states or the external environment. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
                 </p>
             </div>
         </div>
@@ -185,7 +185,7 @@
             <div class="row">
                 <br>
                 <div class="col-xs-6 col-md-4">
-                    <img src="img/Logo.png" class="logo-med">
+                    <img src="{%static 'img/Logo.png'%}" class="logo-med">
                 </div>
                 <div class="col-xs-12 col-md-1"></div>
                 <div class="col-xs-4 col-md-2">
