@@ -1,0 +1,34 @@
+/* Body */
+body {
+    padding-top: 50px;
+}
+
+/* Logo Sizes */
+.logo-small {
+    height: 28px;
+}
+
+.logo-med {
+    height: 50px;
+}
+
+/* Custom Button Styles */
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.btn-light {
+    border-radius: 0;
+    color: #333;
+    background-color: rgb(255, 255, 255);
+}
+.btn-light:hover, .btn-light:focus, .btn-light:active {
+    color: #333;
+    box-shadow: inset 0 0 0 2px #999;
+    background-color: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,218 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing Page</title>
+  
+    <script type="text/javascript" src="{%static 'js/jquery-2.1.1.min.js'%}"></script>
+    <script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
+    <link href="{%static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/header.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/footer.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/common.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'css/index.css'%}">
+    <script type="text/javascript">
+    var bigdata = "bigdata.html";
+    var index = "index.html";
+    var iot = "iot.html";
+    var mgmt = "management.html";
+    var mgmtpro = "mgmtpro.html";
+    var downwp = "downloadwp.html";
+    $(document).ready(function() {
+        /* Navbar Dropdown Animation */
+        $('.dropdown').hover(function() {
+              $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+            }, function() {
+              $(this).find('.dropdown-menu').first().stop(true, true).slideUp()
+        });
+        /* Image Popover */
+        $('[data-toggle="popover"]').on({
+            html: 'true',
+            mouseover: function() {
+                $(this).popover('toggle');
+            },
+            mouseleave: function() {
+                $(this).popover('toggle');
+            },
+            click: function() {
+                $(this).off('mouseleave');
+            }
+        });
+
+    });
+    function goToPage (arg) {
+        location.href = arg;
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="{%static 'img/Logo.png'%}" class="logo-small">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse" role="menu">
+                            <li><a href="#">Mobile</a>
+                            </li>
+                            <li><a href="bigdata">Big Data</a>
+                            </li>
+                            <li><a href="#">IoE/IoT</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">About Us&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="management.html">Management</a>
+                            </li>
+                            <li><a href="#">Code of Conduct</a>
+                            </li>
+                            <li><a href="#">Business Process</a>
+                            </li>
+                            <li><a href="location.html">Locations</a>
+                            </li>
+                            <li><a href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Nav Bar End-->
+    <!-- Carousel-->
+    <section id="home" class="text-center">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{%static 'img/mobile.jpg'%}" alt="Mobile" />
+                    <div class="carousel-caption">
+                        <a href="#" class="btn btn-lg btn-dark " role="button">Mobile</a><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{%static 'img/bigdata.jpg'%}" alt="Big Data" />
+                    <div class="carousel-caption">
+                        <a href="#" class="btn btn-lg btn-dark" role="button">Big Data</a><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{%static 'img/iot.jpg'%}" alt="IoT/IoE" />
+                    <div class="carousel-caption">
+                        <a href="#" class="btn btn-lg btn-dark" role="button">IoT/IoE</a><br><br>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{%static 'img/video.jpg'%}" alt="Video" />
+                    <div class="carousel-caption">
+                        <a href="#" class="btn btn-lg btn-dark" role="button">Video</a><br><br>
+                    </div>
+                </div>
+            </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+    </section>
+    <!-- Carousel End-->
+    <br>
+    <!-- Thumbnails -->
+    <div class="container">
+        <div class="row">
+            <div id="t1" class="col-xs-4 tb">
+            <h1 class="thumbnail_legend">Mobile</h1>
+                <p class="thumbnail">
+                    <img id="i1" src="{%static 'img/mobile_thumb.jpg'%}" class="thumbnailImage" alt="Mobile" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>Mobile</h4><hr> With Mobile Services, it’s easy to rapidly build engaging cross-platform and native apps for iOS, Android, Windows or Mac, store app data in the cloud. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
+                </p>
+            </div>
+            <div id="t2" class="col-xs-4 tb">
+                <h1 class="thumbnail_legend">Big Data</h1>
+                <p class="thumbnail">
+                    <img id="i2" src="{%static 'img/bigdata_thumb.jpg'%}" alt="Big Data" class="thumbnailImage" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>Big Data</h4><hr> Our Big Data product offerings are orgranized focusing on Big Data Computing, Big Data Sciences and Analytics, and Big Data Technology and Engineering. <br><br><button class='btn btn-light pull-right' onClick='goToPage(bigdata); return false;'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
+                </p>
+            </div>
+            <div id="t3" class="col-xs-4 tb">
+            <h1 class="thumbnail_legend">IoT/IoE</h1>
+                <p class="thumbnail">
+                    <img id="i3" src="img/iot_thumb.jpg" alt="IoT/IoE" class="thumbnailImage" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-html="true" data-content="<h4>IoT/IoE</h4><hr> IoT is network of physical objects that contain embedded technology to comminicate and sense or interact with their internal states or the external environment. <br><br><button type='button' class='btn btn-light pull-right' onclick='#'><span class='glyphicon glyphicon-arrow-right'></span></button><br><br>">
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Thumbnails End -->
+    <div class="container">
+        <h4 class="text-muted">While many Big Data solutions are built for extremely knowledgeable data scientists and analysts, IBM's Watson Analytics makes advanced and predictive business analytics easily accessible to small businesses. The platform doesn't require any requisite skills of using complex data mining and analysis systems, but automates the process instead. This self-service analytics solution includes a suite of data access, data refinement and data warehousing services, giving you all the tools you need to prepare and present data yourself in a simple and actionable way to guide decision-making.</h4>
+    </div>
+    <br>
+    <!-- Footer -->
+    <section id="footer" class="footer-bg">
+        <div class="container">
+            <div class="row">
+                <br>
+                <div class="col-xs-6 col-md-4">
+                    <img src="img/Logo.png" class="logo-med">
+                </div>
+                <div class="col-xs-12 col-md-1"></div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Home</h4>
+                    <hr>
+                </div>
+                <div class="col-xs-4 col-md-2">
+                    <h4>Products</h4>
+                    <hr>
+                    <p>Mobile</p>
+                    <p>Big Data</p>
+                    <p>IoE/IoT</p>
+                </div>
+                <div class=" col-xs-4 col-md-3">
+                    <h4>About Us</h4>
+                    <hr>
+                    <p>Management</p>
+                    <p>Code of Conduct</p>
+                    <p>Business Process</p>
+                    <p>Locations</p>
+                    <p>Contact</p>
+                </div>
+            </div>
+            <p class="text-muted">&copy;&nbsp;2014 My Corp, Inc</p>
+        </div>
+    </section>
+    <!-- Footer End -->
+</body>
+
+</html>
